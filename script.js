@@ -24,3 +24,28 @@ function findNameOfTallestMountain(mountains) {
 }
 var mountainName = findNameOfTallestMountain(mountains);
 console.log(mountainName);
+//
+var averagePrice = 0;
+var sumPrice = 0;
+var products = [
+    {
+        name: "Steak",
+        price: 16
+    },
+    {
+        name: "Bacon",
+        price: 14
+    },
+    {
+        name: "chicken",
+        price: 12
+    }
+];
+function calcAverageProductPrice(products) {
+    products.forEach(function (p) {
+        sumPrice += p.price;
+    });
+    return sumPrice / 3;
+}
+var productaverage = calcAverageProductPrice(products);
+console.log(productaverage);

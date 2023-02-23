@@ -36,6 +36,8 @@ console.log(mountainName);
 
 
 //
+let averagePrice:number=0;
+let sumPrice:number=0;
 interface Product{
     name:string;
     price:number;
@@ -56,5 +58,14 @@ let products: Product[] =[
 ]
 
 function calcAverageProductPrice(products: Product[]):number{
-
+    products.forEach((p:Product)=>{
+        sumPrice += p.price ;
+        
+    })
+    return sumPrice/3;
 }
+let productaverage:number = calcAverageProductPrice(products);
+console.log(productaverage);
+
+//
+
