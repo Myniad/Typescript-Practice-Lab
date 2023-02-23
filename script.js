@@ -49,3 +49,36 @@ function calcAverageProductPrice(products) {
 }
 var productaverage = calcAverageProductPrice(products);
 console.log(productaverage);
+//
+var grandTotal = 0;
+var inventory = [
+    {
+        product: {
+            name: "Motor",
+            price: 10.00
+        },
+        quantity: 10
+    },
+    {
+        product: {
+            name: "sensor",
+            price: 12.50
+        },
+        quantity: 4
+    },
+    {
+        product: {
+            name: "LED",
+            price: 1.00
+        },
+        quantity: 20
+    }
+];
+function calcInventoryValue(inventory) {
+    inventory.forEach(function (i) {
+        grandTotal += i.quantity * i.product.price;
+    });
+    return grandTotal;
+}
+var inventoryTotalvalue = calcInventoryValue(inventory);
+console.log(inventoryTotalvalue);

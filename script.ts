@@ -68,4 +68,42 @@ let productaverage:number = calcAverageProductPrice(products);
 console.log(productaverage);
 
 //
+let grandTotal:number=0;
+interface inventoryItem{
+    product:Product;
+    quantity:number;
+}
 
+let inventory: inventoryItem[] =[
+    {
+        product:{
+            name:"Motor",
+            price:10.00
+        },
+        quantity:10
+    },
+    {
+        product:{
+            name:"sensor",
+            price:12.50
+        },
+        quantity:4
+    },
+    {
+        product:{
+            name:"LED",
+            price:1.00
+        },
+        quantity:20
+    }
+
+]
+
+function calcInventoryValue(inventory : inventoryItem[]):number{
+    inventory.forEach((i:inventoryItem)=>{       
+        grandTotal += i.quantity * i.product.price;
+    })
+    return grandTotal;
+}
+let inventoryTotalvalue:number = calcInventoryValue(inventory);
+console.log(inventoryTotalvalue);
